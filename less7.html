@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="https://scr.vn/wp-content/uploads/2020/07/H%C3%ACnh-n%E1%BB%81n-t%E1%BA%BFt-2021-cho-laptop.jpg" alt="Ảnh nền">
+    <p class="Title">GAME ĐOÁN SỐ</p>
+    <input placeholder="Nhập số lớn nhất" id="max_number">
+    <input placeholder="Số lượt" id="turns">
+    <input placeholder="Đoán số" id="number">
+    <button id="play" onclick="play()">Chơi</button>
+    <button id="reset" onclick="reset()">Reset</button>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+
+    function play(){
+    let num = document.getElementById("max_number").value;
+    let j = document.getElementById("turns").value;
+    let num3 = parseInt(Math.random()*num);
+    let i = 0;
+    while (i < j){
+        let num2 = document.getElementById("number").value;
+        if (num2 == num3){
+            result = "Số chính xác là " + num3 + ", Chúc mừng bạn đã trúng giải";
+            document.getElementById("result").innerHTML = result;
+            break;
+        }else {
+            result = "Số chính xác là " + num3 + ", Chúc bạn may mắn lần sau";
+            document.getElementById("result").innerHTML = result;
+        }
+        i++
+    }
+}
+    function reset(){
+
+        result = "";
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
